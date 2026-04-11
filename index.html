@@ -8,200 +8,202 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="logo">
-                    <img src="logo.png" alt="Lujakate Oy" class="logo-img">
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Koti</a></li>
-                    <li><a href="#about">Tietoja</a></li>
-                    <li><a href="#services">Palvelut</a></li>
-                    <li><a href="#gallery">Galleria</a></li>
-                    <li><a href="#contact">Yhteystiedot</a></li>
-                </ul>
-            </div>
-        </nav>
 
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Luotettavaa kattoalan osaamista<br>Keski-Suomessa</h1>
-                    <p>Rakennamme ja huollamme kattosi!</p>
-                    <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView();">Pyydä tarjous</button>
-                </div>
-            </div>
-        </section>
-    </header>
-
-    <main>
-        <section id="about" class="about">
-            <div class="container">
-                <h2>Tietoja meistä</h2>
-                <div class="about-content">
-                    <p>Tarjoamme kattotyöt ammattitaidolla ja luotettavasti koko Keski-Suomen alueella. Rakennamme, korjaamme ja huollamme katot kaikenlaisiin kiinteistöihin – omakotitaloista kerrostaloihin ja teollisuusrakennuksiin.</p>
-                    
-                    <p>Olipa kyseessä uuden katon asennus, kattoremontti tai säännöllinen huolto, varmistamme, että kattosi kestää aikaa ja vaihtelevia sääolosuhteita. Käytämme vain laadukkaita materiaaleja ja nykyaikaisia työmenetelmiä, jotta lopputulos on kestävä ja huoleton.</p>
-                    
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <p>Palvelemme koko Keski-Suomen alueella</p>
-                        </div>
-                        <div class="highlight-item">
-                            <p>Laatu ja asiakastyytyväisyys etusijalla</p>
-                        </div>
-                    </div>
-                    
-                    <p>Ota yhteyttä ja pyydä maksuton arviointi – pidetään kattosi kunnossa!</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="services">
-            <div class="container">
-                <h2>Palvelumme</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <h3>🔨 Kattojen asennus</h3>
-                        <p>Ammattitaitoinen kattojen asennus uusille rakennuksille ja peruskorjauksiin</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>🔧 Kattojen korjaus</h3>
-                        <p>Vuotojen korjaus ja kattojen kunnostus nopeasti ja luotettavasti</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>🛡️ Kattojen huolto</h3>
-                        <p>Säännöllinen huolto ja kunnossapito kattosi pitkäikäisyyden varmistamiseksi</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="gallery" class="gallery">
-            <div class="container">
-                <h2>Projektit</h2>
-                <div class="carousel">
-                    <div class="carousel-container">
-                        <img src="katto-1.jpg" alt="Kattotyöt" class="carousel-image active">
-                        <img src="katto-2.jpeg" alt="Kattotyöt" class="carousel-image">
-                        <img src="katto-3.jpeg" alt="Kattotyöt" class="carousel-image">
-                        <img src="katto-4.jpg" alt="Kattotyöt" class="carousel-image">
-                        <img src="katto-5.jpg" alt="Kattotyöt" class="carousel-image">
-                    </div>
-                    
-                    <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
-                    <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
-                    
-                    <div class="carousel-dots">
-                        <span class="dot active" onclick="currentSlide(0)"></span>
-                        <span class="dot" onclick="currentSlide(1)"></span>
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
-                        <span class="dot" onclick="currentSlide(4)"></span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Ota yhteyttä</h2>
-                <div class="contact-wrapper">
-                    <div class="contact-info">
-                        <div class="info-item">
-                            <h3>📞 Puhelin</h3>
-                            <p><a href="tel:+358453118757">045 311 8757</a></p>
-                        </div>
-                        <div class="info-item">
-                            <h3>📧 Sähköposti</h3>
-                            <p><a href="mailto:teemu@lujakate.fi">teemu@lujakate.fi</a></p>
-                        </div>
-                        <div class="info-item">
-                            <h3>🏢 Y-tunnus</h3>
-                            <p>3507487-8</p>
-                        </div>
-                    </div>
-
-                    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                        <div class="form-group">
-                            <label for="name">Nimi *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Sähköposti *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Puhelinnumero</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Viesti *</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Lähetä viesti</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
+<!-- ✅ HEADER -->
+<header class="header">
+    <nav class="navbar">
         <div class="container">
-            <p>&copy; 2026 Lujakate Oy. Kaikki oikeudet pidätetään.</p>
+
+            <div class="logo">
+                <img src="logo.png" alt="Lujakate Oy" class="logo-img">
+            </div>
+
+            <!-- ✅ Hamburger-menu -->
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+            <!-- ✅ Navigaatio -->
+            <ul class="nav-links" id="navMenu">
+                <li><a href="#home">Koti</a></li>
+                <li><a href="#about">Tietoja</a></li>
+                <li><a href="#services">Palvelut</a></li>
+                <li><a href="#gallery">Galleria</a></li>
+                <li><a href="#contact">Yhteystiedot</a></li>
+            </ul>
+
         </div>
-    </footer>
+    </nav>
 
-    <script>
-        let currentIndex = 0;
-        let autoSlideTimer;
+    <!-- ✅ HERO -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Luotettavaa kattoalan osaamista<br>Keski-Suomessa</h1>
+                <p>Rakennamme ja huollamme kattosi!</p>
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView();">Pyydä tarjous</button>
+            </div>
+        </div>
+    </section>
+</header>
 
-        function showSlide(index) {
-            const images = document.querySelectorAll('.carousel-image');
-            const dots = document.querySelectorAll('.dot');
-            
-            if (index >= images.length) currentIndex = 0;
-            if (index < 0) currentIndex = images.length - 1;
-            
-            images.forEach(img => img.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-            
-            images[currentIndex].classList.add('active');
-            dots[currentIndex].classList.add('active');
-        }
+<main>
+<section id="about" class="about">
+    <div class="container">
+        <h2>Tietoja meistä</h2>
 
-        function changeSlide(n) {
-            currentIndex += n;
-            showSlide(currentIndex);
-            resetAutoSlide();
-        }
+        <div class="about-content">
 
-        function currentSlide(n) {
-            currentIndex = n;
-            showSlide(currentIndex);
-            resetAutoSlide();
-        }
+            <p>
+                Tarjoamme kattotyöt ammattitaidolla ja luotettavasti koko Keski-Suomen alueella.
+                Rakennamme, korjaamme ja huollamme katot kaikenlaisiin kiinteistöihin –
+                omakotitaloista kerrostaloihin ja teollisuusrakennuksiin.
+            </p>
 
-        function autoSlide() {
-            currentIndex++;
-            showSlide(currentIndex);
-        }
+            <p>
+                Olipa kyseessä uuden katon asennus, kattoremontti tai säännöllinen huolto,
+                varmistamme, että kattosi kestää aikaa ja vaihtelevia sääolosuhteita.
+                Käytämme vain laadukkaita materiaaleja ja nykyaikaisia työmenetelmiä,
+                jotta lopputulos on kestävä ja huoleton.
+            </p>
 
-        function startAutoSlide() {
-            autoSlideTimer = setInterval(autoSlide, 4000);
-        }
+            <div class="about-highlights">
+                <div class="highlight-item">
+                    <p>Palvelemme koko Keski-Suomen alueella</p>
+                </div>
+                <div class="highlight-item">
+                    <p>Laatu ja asiakastyytyväisyys etusijalla</p>
+                </div>
+            </div>
 
-        function resetAutoSlide() {
-            clearInterval(autoSlideTimer);
-            startAutoSlide();
-        }
+            <p>
+                Ota yhteyttä ja pyydä maksuton arviointi – pidetään kattosi kunnossa!
+            </p>
 
-        startAutoSlide();
-    </script>
+        </div>
+    </div>
+</section>
+
+<!-- ✅ SERVICES -->
+<section id="services" class="services">
+    <div class="container">
+        <h2>Palvelumme</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🔨 Kattojen asennus</h3>
+                <p>Laadukas ja kestävä kattoratkaisu.</p>
+            </div>
+            <div class="service-card">
+                <h3>🔧 Kattojen korjaus</h3>
+                <p>Nopea ja luotettava vuotopaikkojen korjaus.</p>
+            </div>
+            <div class="service-card">
+                <h3>🛡️ Kattojen huolto</h3>
+                <p>Säännöllinen huolto kattosi pitkäikäisyyden varmistamiseksi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ✅ GALLERY -->
+<section id="gallery" class="gallery">
+    <div class="container">
+        <h2>Projektit</h2>
+
+        <div class="carousel">
+            <div class="carousel-container">
+                <img src="katto-1.jpg" class="carousel-image active">
+                <img src="katto-2.jpeg" class="carousel-image">
+                <img src="katto-3.jpeg" class="carousel-image">
+                <img src="katto-4.jpg" class="carousel-image">
+                <img src="katto-5.jpg" class="carousel-image">
+            </div>
+
+            <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+            <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- ✅ CONTACT -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Ota yhteyttä</h2>
+
+        <div class="contact-wrapper">
+
+            <!-- ✅ Vasemman puolen laatikot -->
+            <div class="contact-info">
+
+                <div class="info-item">
+                    <h3>📞 Puhelin</h3>
+                    <p><a href="tel:+358453118757">045 311 8757</a></p>
+                </div>
+
+                <div class="info-item">
+                    <h3>📧 Sähköposti</h3>
+                    <p><a href="mailto:teemu@lujakate.fi">teemu@lujakate.fi</a></p>
+                </div>
+
+                <div class="info-item">
+                    <h3>🏢 Y‑tunnus</h3>
+                    <p>3507487-8</p>
+                </div>
+
+            </div>
+
+            <!-- ✅ Lomake -->
+            <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+                <div class="form-group">
+                    <label for="name">Nimi *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Sähköposti *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Puhelinnumero</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Viesti *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Lähetä viesti</button>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ✅ FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Lujakate Oy. Kaikki oikeudet pidätetään.</p>
+    </div>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("open");
+}
+
+let currentIndex = 0;
+function changeSlide(step) {
+    const images = document.querySelectorAll('.carousel-image');
+    images[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + step + images.length) % images.length;
+    images[currentIndex].classList.add('active');
+}
+</script>
+
 </body>
 </html>
