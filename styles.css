@@ -382,8 +382,19 @@ textarea {
         display: flex;
     }
 
+/* ✅ PAREMMAT MOBIILIKUVAT */
     .carousel-container {
-        height: 250px;
+        height: 55vh;
+        min-height: 350px; 
+    }
+
+    .carousel-image {
+        object-fit: cover;
+    }
+
+    .carousel-btn {
+        padding: 10px 14px;
+        font-size: 1.6rem;
     }
 
     .contact-wrapper {
