@@ -1,0 +1,367 @@
+:root {
+    --primary-color: #0f0f0f;
+    --secondary-color: #1a1a1a;
+    --accent-color: #3a3a3a;
+    --text-dark: #e0e0e0;
+    --text-light: #ffffff;
+    --bg-dark: #0f0f0f;
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* -------------------------
+   HEADER & NAV
+------------------------- */
+
+.navbar {
+    width: 100%;
+    padding: 1rem 0;
+    background: rgba(15,15,15,0.95);
+    backdrop-filter: blur(10px);
+    position: relative;  /* ✅ Ei jää kiinni ylös */
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* ✅ Logo-koot */
+.logo img {
+    height: 360px; /* Desktop */
+    width: auto;
+}
+
+/* Desktop navigation */
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Hamburger */
+
+.hamburger {
+    display: none;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* -------------------------
+   HERO
+------------------------- */
+
+.hero {
+    padding: 8rem 0;
+    text-align: center;
+    background: linear-gradient(135deg, var(--bg-dark), var(--secondary-color));
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin: 1rem 0 2rem;
+}
+
+/* BUTTONS */
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 2px solid #888;
+    background: #555;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #777;
+}
+
+/* -------------------------
+   ABOUT
+------------------------- */
+
+.about {
+    padding: 5rem 0;
+    background: var(--secondary-color);
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.about-highlights {
+    background: var(--accent-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* -------------------------
+   SERVICES
+------------------------- */
+
+.services {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--bg-dark), var(--secondary-color));
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--accent-color);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* -------------------------
+   GALLERY
+------------------------- */
+
+.gallery {
+    padding: 5rem 0;
+    background: var(--secondary-color);
+}
+
+.gallery h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+.carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+
+/* ✅ Nuolinapit sivuilla */
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 15px 20px;
+    font-size: 2rem;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 6px;
+}
+
+.carousel-btn.prev { left: 15px; }
+.carousel-btn.next { right: 15px; }
+
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+/* -------------------------
+   CONTACT
+------------------------- */
+
+.contact {
+    padding: 5rem 0;
+    background: var(--bg-dark);
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+/* 2-saraketta desktopissa */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    background: var(--accent-color);
+    padding: 2rem;
+    border-left: 4px solid #888;
+    border-radius: 8px;
+}
+
+.contact-form {
+    background: var(--accent-color);
+    padding: 2.5rem;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: var(--text-light);
+}
+
+/* -------------------------
+   FOOTER
+------------------------- */
+
+.footer {
+    padding: 2rem 0;
+    text-align: center;
+    background: var(--primary-color);
+    color: var(--text-light);
+}
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
+@media (max-width: 768px) {
+
+    .logo img {
+        height: 240px; /* ✅ mobiilikoko */
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .carousel-container {
+        height: 250px;
+    }
+
+    .contact-wrapper,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
