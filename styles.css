@@ -60,7 +60,7 @@ body {
 }
 
 .logo img {
-    height: 120px;
+    height: 240px;
     width: auto;
 }
 
@@ -357,7 +357,7 @@ body {
 @media (max-width: 768px) {
 
     .logo img {
-        height: 80px;
+        height: 140px;
     }
 
     .hamburger {
