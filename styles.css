@@ -8,7 +8,7 @@
     --bg-dark: #0f0f0f;
 }
 
-/* Reset */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -24,9 +24,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-dark);
     color: var(--text-dark);
-    line-height: 1.6;
-    padding-top: 84px;
-    overflow-x: hidden;
+    overflow-x: hidden; /* ✅ estää mobiilivuodon */
 }
 
 .container {
@@ -35,22 +33,22 @@ body {
     padding: 0 20px;
 }
 
-/* -----------------------------------
-   HEADER
------------------------------------ */
+/* -------------------------
+   HEADER & NAV
+------------------------- */
 
 .header {
     background-color: var(--bg-dark);
-    color: var(--text-light);
     border-bottom: 2px solid var(--accent-color);
 }
 
 .navbar {
     width: 100%;
     padding: 1rem 0;
-    background-color: rgba(15,15,15,0.95);
+    background: rgba(15, 15, 15, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
@@ -58,15 +56,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* ✅ Estää mobiilivuoto-ongelman */
+    flex-wrap: wrap; /* ✅ Estää layoutin leviämisen mobiilissa */
 }
 
 .logo img {
-    height: 240px;
+    height: 120px;
     width: auto;
 }
 
-/* Desktop-menu */
+/* Desktop menu */
 .nav-links {
     display: flex;
     list-style: none;
@@ -79,23 +77,22 @@ body {
     font-weight: 500;
 }
 
-/* Hamburger */
+/* Hamburger menu */
 .hamburger {
     display: none;
-    font-size: 2rem;
     color: white;
+    font-size: 2rem;
     cursor: pointer;
 }
 
-/* -----------------------------------
+/* -------------------------
    HERO
------------------------------------ */
+------------------------- */
 
 .hero {
-    background: linear-gradient(135deg, var(--bg-dark), var(--secondary-color));
     padding: 8rem 0;
     text-align: center;
-    color: var(--text-light);
+    background: linear-gradient(135deg, var(--bg-dark), var(--secondary-color));
 }
 
 .hero-content {
@@ -105,19 +102,42 @@ body {
 
 .hero-content h1 {
     font-size: 3.5rem;
-    margin-bottom: 1rem;
     font-weight: 700;
     line-height: 1.2;
+    color: var(--text-light);
 }
 
 .hero-content p {
     font-size: 1.3rem;
-    margin-bottom: 2rem;
+    margin: 1rem 0 2rem;
+    color: var(--text-light);
 }
 
-/* -----------------------------------
+/* Nappi */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #555;
+    border: 2px solid #888;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #777;
+}
+
+/* -------------------------
    ABOUT
------------------------------------ */
+------------------------- */
 
 .about {
     padding: 5rem 0;
@@ -125,9 +145,9 @@ body {
 }
 
 .about h2 {
-    font-size: 2.5rem;
-    color: var(--text-light);
     text-align: center;
+    color: var(--text-light);
+    font-size: 2.5rem;
     margin-bottom: 2rem;
 }
 
@@ -143,15 +163,20 @@ body {
 }
 
 .about-highlights {
-    background: var(--accent-color);
     padding: 1.5rem;
+    background: var(--accent-color);
     border-radius: 8px;
     margin: 2rem 0;
 }
 
-/* -----------------------------------
+.highlight-item p {
+    color: #ccc;
+    text-align: center;
+}
+
+/* -------------------------
    SERVICES
------------------------------------ */
+------------------------- */
 
 .services {
     padding: 5rem 0;
@@ -176,28 +201,29 @@ body {
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
+    color: var(--text-light);
 }
 
-/* -----------------------------------
+/* -------------------------
    GALLERY
------------------------------------ */
+------------------------- */
 
 .gallery {
     padding: 5rem 0;
-    background-color: var(--secondary-color);
+    background: var(--secondary-color);
 }
 
 .gallery h2 {
     text-align: center;
-    color: var(--text-light);
-    font-size: 2.5rem;
     margin-bottom: 3rem;
+    color: var(--text-light);
 }
 
+/* Container */
 .carousel {
+    position: relative;
     max-width: 800px;
     margin: 0 auto;
-    position: relative;
     overflow: hidden;
     border-radius: 8px;
 }
@@ -209,9 +235,9 @@ body {
 }
 
 .carousel-image {
+    position: absolute;
     width: 100%;
     height: 100%;
-    position: absolute;
     object-fit: cover;
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -219,50 +245,48 @@ body {
 
 .carousel-image.active {
     opacity: 1;
-} /* ✅ Karusellin nuolinapit kuvien sivuille */
+}
+
+/* ✅ Napit sivuille */
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: rgba(0, 0, 0, 0.5);
     border: none;
+    color: white;
     padding: 15px 20px;
     font-size: 2rem;
     cursor: pointer;
     border-radius: 6px;
-    z-index: 20; /* ✅ nappi kuvan päälle */
-    transition: background-color 0.3s ease;
+    z-index: 10;
 }
 
 .carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.8);
 }
 
-/* ✅ Vasen nuoli */
 .carousel-btn.prev {
     left: 15px;
 }
 
-/* ✅ Oikea nuoli */
 .carousel-btn.next {
     right: 15px;
 }
 
-
-/* -----------------------------------
+/* -------------------------
    CONTACT
------------------------------------ */
+------------------------- */
 
 .contact {
     padding: 5rem 0;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    background: var(--bg-dark);
 }
 
 .contact h2 {
     text-align: center;
     font-size: 2.5rem;
+    color: var(--text-light);
     margin-bottom: 3rem;
 }
 
@@ -272,7 +296,6 @@ body {
     gap: 3rem;
 }
 
-/* Info-boxit */
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -282,8 +305,8 @@ body {
 .info-item {
     background: var(--accent-color);
     padding: 2rem;
-    border-radius: 8px;
     border-left: 4px solid #888;
+    border-radius: 8px;
 }
 
 .info-item h3 {
@@ -291,7 +314,6 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Lomake */
 .contact-form {
     background: var(--accent-color);
     padding: 2.5rem;
@@ -306,7 +328,6 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 600;
     color: var(--text-light);
 }
 
@@ -314,64 +335,31 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 0.8rem;
+    background: #2a2a2a;
     border: 1px solid #555;
     border-radius: 4px;
-    background-color: #2a2a2a;
     color: var(--text-light);
-    font-family: inherit;
-    font-size: 1rem;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    background-color: #3a3a3a;
-    border-color: #888;
-    outline: none;
-}
-
-.btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;        /* ✅ suurempi koko */
-    border-radius: 8px;
-    font-size: 1.2rem;           /* ✅ isompi teksti */
-    font-weight: 600;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.btn-primary {
-    background-color: #555;
-    color: white;
-    border: 2px solid #888;
-}
-
-.btn-primary:hover {
-    background-color: #777;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(136, 136, 136, 0.4);
-}
-
-/* -----------------------------------
+/* -------------------------
    FOOTER
------------------------------------ */
+------------------------- */
 
 .footer {
     padding: 2rem 0;
-    background-color: var(--primary-color);
-    color: var(--text-light);
     text-align: center;
+    background: var(--primary-color);
+    color: var(--text-light);
 }
 
-/* -----------------------------------
-   ✅ MOBIILI
------------------------------------ */
+/* -------------------------
+   MOBILE
+------------------------- */
 
 @media (max-width: 768px) {
 
     .logo img {
-        height: 240px;
+        height: 80px;
     }
 
     .hamburger {
@@ -396,8 +384,7 @@ body {
     }
 
     .hero-content h1 {
-        font-size: 2rem;
-        white-space: normal;
+        font-size: 2.2rem;
     }
 
     .hero-content p {
@@ -406,7 +393,7 @@ body {
 
     .services-grid,
     .contact-wrapper {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
     }
 
     .carousel-container {
