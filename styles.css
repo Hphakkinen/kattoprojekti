@@ -47,8 +47,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;   /* ✅ Tämä pakottaa valikon omalle riville mobiilissa */
 }
+
+
 
 .logo img {
     height: 360px;  /* ✅ Desktop */
